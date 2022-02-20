@@ -12,7 +12,7 @@
 ![MIT licensed](https://badgen.net/badge/license/MIT/blue)
 
 
-_**Instant retro UI for calling any contract function you want**_
+_**Instant retro UI for interacting with KuCoin Smart Contracts**_
 
 ## Features
 
