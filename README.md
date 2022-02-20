@@ -7,7 +7,7 @@
 ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚════╝ ╚══════╝
 ```                                         
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7d210f06-8957-4d00-ab9b-28f40c250201/deploy-status)](https://app.netlify.com/sites/kcc95/deploys)
 [![npm version](https://badgen.net/npm/v/kcc95)](https://www.npmjs.com/package/kcc95)
 ![MIT licensed](https://badgen.net/badge/license/MIT/blue)
 
