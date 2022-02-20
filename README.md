@@ -25,7 +25,7 @@ _**Instant retro UI for interacting with KuCoin Smart Contracts**_
 
 ## Install
 
-Works on any dapp project (Truffle, Buidler, etc.) as long as you point it to the JSON artifacts. And even if you don't have a project, you can run it by itself and manually add ABIs and artifacts.
+Works on any dapp / smart contract (Truffle, Buidler, etc.) as long as you point it to the JSON artifacts. OR Manually add ABIs and or artifacts for any already deployed smart contract you want to interact with.
 
 1. Installation
 
@@ -43,7 +43,7 @@ Works on any dapp project (Truffle, Buidler, etc.) as long as you point it to th
 
 When `kcc95` is run, an Express server is fired up and a frontend (packaged by [Parcel](https://parceljs.org/)) is served at `localhost:3000` (you can define the port with a flag `-p 1234`). The server will watch the directory you passed in for any changes to your artifacts and send those changes down to the frontend via Websockets.
 
-Note that you can also add any contracts you want if you have the ABI or Artifact (there is an Add Contract button).
+Note that you can also add any contract manually if you have the ABI or Artifact (there is an Add Contract button).
 
 ## Contact
 
