@@ -15,6 +15,8 @@
 _**Instant retro UI for interacting with KuCoin Smart Contracts**_
 
 **[kcc95.netlify.app](https://kcc95.netlify.app)**
+
+<img src="https://gateway.pinata.cloud/ipfs/QmSE2kess3PmpZr6DvTU6nKWEbJkrS3542cJnEP674Cwfv" width="600" height="300">
 ## Features
 
 - 🤙 Call any contract function as long as you have the ABI
