@@ -1,0 +1,19 @@
+{
+  "name": "truffle-test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "chain": "ganache-cli -p 8545 -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ganache-cli": "^6.9.1",
+    "truffle": "^5.1.26"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.0.1"
+  }
+}
