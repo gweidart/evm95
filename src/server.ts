@@ -1,4 +1,3 @@
-@ts-nocheck
 import fs from "fs";
 import path from "path";
 import http from "http";
@@ -31,13 +30,13 @@ const startServer = async ({ port, paths = [], artifactPath }: IServer) => {
   // setup websocket stuff
   const server = http.createServer(app);
   const wss = new WebSocket.Server({ clientTracking: false, noServer: true });
-
+  //@ts-ignore-start
   server.on("upgrade", function (request, socket, head) {
     wss.handleUpgrade(request, socket, head, function (ws) {
       wss.emit("connection", ws, request);
     });
   });
-
+  //@ts-ignore-end
   const removeExtension = (str: string) =>
     str.split(".").slice(0, -1).join(".");
 
