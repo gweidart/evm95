@@ -5,3 +5,4 @@ dist
 coverage
 yarn-error.log
 .DS_Store
+.parcel-cache

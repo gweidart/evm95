@@ -23,7 +23,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "yarn tsc && yarn bundle",
-    "tsc": "tsc -p . && tsc -p ./src/app",
+    "tsc": "tsc -p --noEmit . && tsc -p ./src/app",
     "bundle": "parcel build src/app/index.html -d dist --no-source-maps",
     "test": "jest",
     "test:ci": "jest --runInBand",
@@ -32,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn tsc",
+      "pre-commit": "yarn tsc --noEmit",
       "pre-push": "yarn test"
     }
   },
@@ -46,7 +46,7 @@
     "ethers-providers": "^2.1.19",
     "express": "^4.17.1",
     "figlet": "^1.4.0",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.8.0",
     "query-string": "^6.12.1",
     "web3": "^1.3.6",
     "ws": "^7.3.0"
@@ -69,6 +69,7 @@
     "@types/styled-components": "^5.1.0",
     "@types/ws": "^7.2.4",
     "@keepkey/device-protocol": "^7.10.2",
+    "@parcel/transformer-typescript-tsc": "^2.8.0",
     "abi-decoder": "^2.3.0",
     "ethers": "^5.2.0",
     "ganache-cli": "^6.9.1",
