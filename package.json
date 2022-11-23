@@ -68,6 +68,7 @@
     "@types/react-modal": "^3.10.5",
     "@types/styled-components": "^5.1.0",
     "@types/ws": "^7.2.4",
+    "@keepkey/device-protocol": "^7.10.2",
     "abi-decoder": "^2.3.0",
     "ethers": "^5.2.0",
     "ganache-cli": "^6.9.1",
