@@ -1,7 +1,9 @@
 #!/usr/bin/env node
+// @ts-nocheck
 import fs from "fs";
 import path from "path";
 import chalk from "chalk";
+import gradient from "gradient-string";
 import clear from "clear";
 import figlet from "figlet";
 import program from "commander";
@@ -11,19 +13,19 @@ import startServer from "./server";
 
 // determine if we are in development mode
 // https://github.com/TypeStrong/ts-node/issues/846#issuecomment-631828160
-// @ts-ignore
+
 if (process[Symbol.for("ts-node.register.instance")]) {
   process.env.EVM95_DEV = "true";
 }
 
 clear();
 console.log("");
-console.log(chalk.greenBright(figlet.textSync("EVM95", { font: "Roman" })));
+console.log(gradient.pastel(figlet.textSync("EVM95", { font: "Roman" })));
 
 program
   .version(require("../package.json").version)
-  .name("EVM95")
-  .description("Instant retro UI for interacting with EVM Smart Contracts")
+  .name("@gweidart/evm95")
+  .description("Instant retro Smart Contract interface.")
   .usage("[path-to-artifacts-dir] [options]")
   .option("-b, --buidler", "watches the default Buidler artifact directory")
   .option("-t, --truffle", "watches the default Truffle artifact directory")

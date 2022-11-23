@@ -30,8 +30,8 @@ const ConnectOptions = () => {
         
         <ConnectStatus />
 
-        {connection === Method.Localhost && <ByLocalhost />}
         {connection === Method.MetaMask && <ByMetaMask />}
+        {connection === Method.Localhost && <ByLocalhost />}
         {connection === Method.Custom && <ByCustomNode />}
       </Fieldset>
       <CustomSigner />

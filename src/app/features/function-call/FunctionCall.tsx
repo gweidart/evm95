@@ -127,7 +127,7 @@ const FunctionForm = ({ fn }) => {
             <div>ETH to send:</div>
             <Input
               type="number"
-              placeholder="in units of Ethers, not Wei"
+              placeholder="in units of Eth, not Wei"
               value={ethToSend}
               onChange={(e) => setEthToSend(e.target.value)}
               style={{ marginBottom: `1rem` }}

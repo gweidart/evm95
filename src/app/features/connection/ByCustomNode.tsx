@@ -26,7 +26,7 @@ const ByCustomNode = () => {
           <Input
             value={nodeUrl}
             onChange={(e) => setNodeUrl(e.target.value)}
-            placeholder="https://rpc-mainnet.kcc.network"
+            placeholder="https://mainnet.infura.io/v3/API_KEY"
             className="custom-node-url-input"
           />
           <Button

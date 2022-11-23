@@ -1,40 +1,7 @@
 import { createContainer } from "unstated-next";
-import { useState, useEffect, useCallback } from "react";
-import { ethers, providers } from "ethers";
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
 import { JsonRpcProvider, Web3Provider } from "@ethersproject/providers";
-import Onboard from 'bnc-onboard'
-import Web3 from 'web3'
-const RPC_URL = "https://rpc-mainnet.kcc.network"
-
-
-const wallets = [
-{
-  walletName: 'ledger',
-  rpcUrl: RPC_URL
-},
-{ walletName: "metamask"},
-{
-  walletName: 'walletConnect',
-  infuraKey: '00a5b13ef0cf467698571093487743e6'
-}
-
-];
-
-
-const onboard = Onboard({
-  dappId: "ad454b00-3218-4403-95e9-22c3c7d3adc0",       // [String] The API key created by step one above
-  networkId: 321,  // [Integer] The kcc network ID your Dapp uses.
-  subscriptions: {
-    wallet: wallet => {
-        window.localStorage.setItem('selectedWallet', wallet.name)
-        //web3 = new Web3(wallet.provider)
-    }
-  },
-  walletSelect: {
-    wallets: wallets
-  }
-  
-});
 
 export enum Method {
   Localhost = "Localhost",
@@ -43,14 +10,15 @@ export enum Method {
 }
 
 export const options = [
-  { value: Method.MetaMask, label: "🦊 Injected Web3" },
-  { value: Method.Custom, label: "🔧 RPC / API" }
+  { value: Method.Localhost, label: "💻 Localhost:8545" },
+  { value: Method.MetaMask, label: "🦊 MetaMask" },
+  { value: Method.Custom, label: "🔧 Custom" },
 ];
 
 export function useConnection() {
   const { hostname } = window.location;
   const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
-  const defaultOption = Method.MetaMask; //y u default to local b4 argh
+  const defaultOption = isLocal ? Method.Localhost : Method.MetaMask;
 
   const [connection, setConnection] = useState(defaultOption);
   const [provider, setProvider] = useState<
@@ -78,21 +46,14 @@ export function useConnection() {
     }
   };
 
-
-
-
   const connectMetaMask = async () => {
     try {
-      await onboard.walletSelect();
-      await onboard.walletCheck();
+      await window.ethereum.enable();
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       testAndSetProvider(provider);
-
-
-
     } catch (error) {
       console.error(error);
-      alert("Cannot connect to Wallet, are you sure it has been installed?");
+      alert("Cannot connect to MetaMask, are you sure it is connected?");
     }
   };
 

@@ -24,7 +24,7 @@ const useSigners = () => {
       }
     } catch (error) {
       console.error(error);
-      alert("Improper mnemonic or private key.");
+      alert("Invalid mnemonic or private key.");
     }
   };
 

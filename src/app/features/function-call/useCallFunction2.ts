@@ -41,9 +41,9 @@ const useCallFunction2 = (args, types, fn, opts) => {
     if (fn.stateMutability !== "view" && fn.constant !== true) {
       // mutating fn; just return hash
       const tx = await instance[fn.name](...processedArgs, opts);
-      addLogItem(`tx.hash: ${tx.hash}`);
+      addLogItem(`txn hash: ${tx.hash}`);
       await tx.wait();
-      addLogItem(`tx mined: ${tx.hash}`);
+      addLogItem(`txn mined: ${tx.hash}`);
       await logEvents(tx);
     } else {
       // view fn

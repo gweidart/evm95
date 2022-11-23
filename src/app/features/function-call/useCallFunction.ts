@@ -49,7 +49,7 @@ const useCallFunction = (args, types, fn, opts) => {
 
 
     if(welcomeMessage == 0){
-      addLogItem(`Hello, welcome!`)
+      addLogItem(`The Times 03/Jan/2009, Chancellor on brink of second bailout for banks.`)
       welcomeMessage = 1;
     }
 

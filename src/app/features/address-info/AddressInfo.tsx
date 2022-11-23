@@ -38,7 +38,7 @@ const AddressInfo = () => {
     <Container label="Contract Address">
       <div>Custom:</div>
       <Input
-        placeholder="Paste the deployed contract address here..."
+        placeholder="Paste the deployed contract address here."
         value={inputText}
         onChange={(e) => {
           setInputText(e.target.value);
@@ -52,14 +52,14 @@ const AddressInfo = () => {
           {network && `(${network?.chainId})`}:
         </div>
         <AddressPanel variant="well">
-          {addressFromArtifact || "No address found in artifact"}
+          {addressFromArtifact || "No address found in artifacts.json"}
         </AddressPanel>
         <Divider style={{ marginTop: `1rem` }} />
         <div style={{ marginTop: `1rem` }}>
           <strong>Selected contract address:</strong>
         </div>
         <AddressPanel variant="well">
-          {address || "No valid address, function call will fail"}
+          {address || "Invalid address, function call will likely fail"}
         </AddressPanel>
       </div>
     </Container>
