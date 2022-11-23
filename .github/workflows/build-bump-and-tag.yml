@@ -3,7 +3,7 @@ name: Build bump tag
 on:
     push:
         branches:
-            - "master"
+            - "main"
 
 jobs:
     install-and-test:
