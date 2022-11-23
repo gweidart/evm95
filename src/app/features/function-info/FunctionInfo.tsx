@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import useEvent from "react-use/lib/usePrevious";
+import { useEvent } from "react-use";
 
 import FunctionDetails from "./FunctionDetails";
 import FunctionList from "./FunctionList";
