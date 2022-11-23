@@ -18,11 +18,11 @@ if (process[Symbol.for("ts-node.register.instance")]) {
 
 clear();
 console.log("");
-console.log(chalk.greenBright(figlet.textSync("Kcc95", { font: "ANSI Shadow" })));
+console.log(chalk.greenBright(figlet.textSync("EVM95", { font: "Roman" })));
 
 program
   .version(require("../package.json").version)
-  .name("evm95")
+  .name("EVM95")
   .description("Instant retro UI for interacting with EVM Smart Contracts")
   .usage("[path-to-artifacts-dir] [options]")
   .option("-b, --buidler", "watches the default Buidler artifact directory")
