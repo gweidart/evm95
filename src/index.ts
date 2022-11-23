@@ -22,8 +22,8 @@ console.log(chalk.greenBright(figlet.textSync("Kcc95", { font: "ANSI Shadow" }))
 
 program
   .version(require("../package.json").version)
-  .name("kcc95")
-  .description("A GUI for controlling KuCoin dapps")
+  .name("evm95")
+  .description("Instant retro UI for interacting with EVM Smart Contracts")
   .usage("[path-to-artifacts-dir] [options]")
   .option("-b, --buidler", "watches the default Buidler artifact directory")
   .option("-t, --truffle", "watches the default Truffle artifact directory")
