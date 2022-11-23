@@ -10,7 +10,7 @@ o888ooooood8       `8'       o8o        o888o   .oP'     `8bd88P'
 ```                                         
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7d210f06-8957-4d00-ab9b-28f40c250201/deploy-status)](https://app.netlify.com/sites/evm95/deploys)
-[![npm version](https://badgen.net/npm/v/kcc95)](https://www.npmjs.com/package/kcc95)
+[![npm version](https://badgen.net/npm/v/evm95)](https://www.npmjs.com/package/evm95)
 ![MIT licensed](https://badgen.net/badge/license/MIT/blue)
 
 
@@ -30,7 +30,7 @@ _**Instant retro UI for interacting with Smart Contracts on any EVM compatible b
 
 ## Usage 
 
-Simply visit **[evm95.netlify.app](https://kcc95.netlify.app)**
+Simply visit **[evm95.netlify.app](https://evm95.netlify.app)**
 
 Connect via Metamask, wallet connect, or local RPC
 
@@ -44,18 +44,18 @@ Works on any dapp / smart contract (Truffle, Buidler, etc.) as long as you point
 1. Installation
 
     ```shell
-    npm install -g kcc95
+    npm install -g evm95
     ```
 
 2. Run with path to your artifacts folder:
 
     ```shell
-    kcc95 ./build/contracts
+    evm95 ./build/contracts
     ```
 
 ### How it works
 
-When `kcc95` is run, an Express server is fired up and a frontend (packaged by [Parcel](https://parceljs.org/)) is served at `localhost:3000` (you can define the port with a flag `-p 1234`). The server will watch the directory you passed in for any changes to your artifacts and send those changes down to the frontend via Websockets.
+When `evm95` is run, an Express server is fired up and a frontend (packaged by [Parcel](https://parceljs.org/)) is served at `localhost:3000` (you can define the port with a flag `-p 1234`). The server will watch the directory you passed in for any changes to your artifacts and send those changes down to the frontend via Websockets.
 
 Note that you can also add any contract manually if you have the ABI or Artifact (there is an Add Contract button).
 

@@ -13,7 +13,7 @@ import startServer from "./server";
 // https://github.com/TypeStrong/ts-node/issues/846#issuecomment-631828160
 // @ts-ignore
 if (process[Symbol.for("ts-node.register.instance")]) {
-  process.env.KCC95_DEV = "true";
+  process.env.EVM95_DEV = "true";
 }
 
 clear();

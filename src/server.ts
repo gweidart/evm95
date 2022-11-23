@@ -22,7 +22,7 @@ const startServer = async ({ port, paths = [], artifactPath }: IServer) => {
   const app: express.Application = express();
 
   // use middleware if in development, otherwise serve prod build
-  if (process.env.KCC95_DEV) {
+  if (process.env.EVM95_DEV) {
     app.use("/", devClientMiddleware());
   } else {
     app.use("/", express.static(__dirname + "/app"));

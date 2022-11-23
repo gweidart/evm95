@@ -1,0 +1,29 @@
+name: Release
+
+on:
+    workflow_run:
+        workflows: ["Build bump tag"]
+        types:
+            - completed
+jobs:
+    publish-gpr:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        permissions:
+            packages: write
+            contents: read
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3.5.1
+              with:
+                  node-version: 16.x
+            - name: Set package registry
+              run: npm config set registry https://npm.pkg.github.com
+            - name: Github package registry authentication
+              run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+      -       name: Npm registry authentication
+              run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+      -       name: Publish package to Github and Npm package registries
+              run: npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

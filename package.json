@@ -1,5 +1,17 @@
 {
-  "name": "kcc95",
+  "name": "@gweidart/evm95",
+  "description": "Instant retro UI for interacting with EVM compatible Smart Contracts",
+  "author": "GweiDart",
+  "homepage": "evm95.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gweidart/evm95.git"
+  },
+"publishConfig": {
+  "access": "public",
+  "tag": "latest",
+  "registry": "https://npm.pkg.github.com"
+  },
   "version": "1.0.0",
   "bin": {
     "eth95": "./dist/index.js"
@@ -15,7 +27,8 @@
     "bundle": "parcel build src/app/index.html -d dist --no-source-maps",
     "test": "jest",
     "test:ci": "jest --runInBand",
-    "prepublish": "yarn build"
+    "postpublish": "npm run publish-npm",
+    "publish-npm": "npm publish --access public --ignore-scripts --@cusdt-link:registry='https://registry.npmjs.org'"
   },
   "husky": {
     "hooks": {

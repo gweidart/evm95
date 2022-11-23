@@ -11,7 +11,7 @@ describe("e2e: call functions", () => {
   let ganacheProcess: ChildProcess;
   let serverProcess: ChildProcess;
   let ganachePort: number;
-  let kcc95Port: number;
+  let evm95Port: number;
   let browser: Browser;
   let page: Page;
 
@@ -32,19 +32,19 @@ describe("e2e: call functions", () => {
       { stdio: "inherit", env: process.env },
     );
 
-    // 3. launch kcc95
-    kcc95Port = await getPort();
+    // 3. launch evm95
+    evm95Port = await getPort();
     serverProcess = spawn(
       "ts-node",
       [
         "./src/index.ts",
         "./test/projects/truffle/build/contracts",
         "-p",
-        kcc95Port.toString(),
+        evm95Port.toString(),
       ],
       { stdio: "inherit" },
     );
-    await portUsed.waitUntilUsed(kcc95Port, 200, 10000);
+    await portUsed.waitUntilUsed(evm95Port, 200, 10000);
 
     // 4. launch headless browser w/ puppeteer
     browser = await puppeteer.launch();
@@ -54,7 +54,7 @@ describe("e2e: call functions", () => {
       height: 1080,
       deviceScaleFactor: 1,
     });
-    await page.goto(`http://localhost:${kcc95Port}`, {
+    await page.goto(`http://localhost:${evm95Port}`, {
       waitUntil: "networkidle2",
     });
 

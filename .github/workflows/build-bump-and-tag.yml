@@ -1,0 +1,43 @@
+name: Build bump tag
+
+on:
+    push:
+        branches:
+            - "master"
+
+jobs:
+    install-and-test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Set Node.js 16.x
+            uses: actions/setup-node@v3.5.1
+            with:
+                node-version: 16.x
+            - run: npm i -g husky
+            - name: Install dependencies
+            run: npm ci
+
+            - name: Rebuild the dist/ directory
+            run: |
+              npm run build
+
+    tag-and-bump:
+        if: "!startsWith(github.event.head_commit.message, 'bump:')"
+        needs: install-and-test
+        runs-on: ubuntu-latest
+        name: "Bump version and create changelog with commitizen"
+        steps:
+            - name: Check out
+              uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
+                token: "${{ secrets.GITHUB_TOKEN }}"
+            - id: cz
+              name: Bump package
+              uses: commitizen-tools/commitizen-action@master
+              with:
+               github_token: ${{ secrets.GITHUB_TOKEN }}
+            - name: Print Version
+              run: echo "Bumped to version ${{ steps.cz.outputs.version }}"
