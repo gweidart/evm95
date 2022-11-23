@@ -71,7 +71,7 @@
     "@types/ws": "^7.2.4",
     "@keepkey/device-protocol": "^7.10.2",
     "@parcel/transformer-typescript-tsc": "^2.8.0",
-    "punycode": "^2.1.0",
+    "punycode": "^1.4.1",
     "abi-decoder": "^2.3.0",
     "ethers": "^5.2.0",
     "ganache-cli": "^6.9.1",
