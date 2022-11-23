@@ -26,9 +26,7 @@
     "tsc": "tsc -p . && tsc -p ./src/app",
     "bundle": "parcel build src/app/index.html -d dist/app --no-source-maps",
     "test": "jest",
-    "test:ci": "jest --runInBand",
-    "postpublish": "npm run publish-npm",
-    "publish-npm": "npm publish --access public --ignore-scripts --@cusdt-link:registry='https://registry.npmjs.org'"
+    "test:ci": "jest --runInBand"
   },
   "husky": {
     "hooks": {
