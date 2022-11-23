@@ -24,7 +24,7 @@
     "start": "ts-node src/index.ts",
     "build": "yarn tsc && yarn bundle",
     "tsc": "tsc -p . && tsc -p ./src/app",
-    "bundle": "parcel build src/app/index.html -dist-dir dist --no-source-maps",
+    "bundle": "parcel build src/app/index.html --dist-dir dist --no-source-maps",
     "test": "jest",
     "test:ci": "jest --runInBand",
     "postpublish": "npm run publish-npm",
