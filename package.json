@@ -23,7 +23,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "yarn tsc && yarn bundle",
-    "tsc": "tsc -p --noEmit . && tsc -p ./src/app",
+    "tsc": "tsc -p . && tsc -p ./src/app",
     "bundle": "parcel build src/app/index.html -d dist --no-source-maps",
     "test": "jest",
     "test:ci": "jest --runInBand",
@@ -32,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn tsc --noEmit",
+      "pre-commit": "yarn tsc",
       "pre-push": "yarn test"
     }
   },
