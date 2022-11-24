@@ -1,6 +1,6 @@
 {
   "name": "@gweidart/evm95",
-  "description": "Instant retro UI for interacting with EVM compatible Smart Contracts",
+  "description": "Instant retro Smart Contract interface",
   "author": "GweiDart",
   "homepage": "evm95.netlify.app",
   "repository": {
@@ -12,7 +12,7 @@
     "tag": "latest",
     "registry": "https://npm.pkg.github.com"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": {
     "eth95": "./dist/index.js"
   },

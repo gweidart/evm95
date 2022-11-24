@@ -37,7 +37,7 @@ const ByAbi = ({ closeModal }) => {
       <TabBody>
         <p>
           Dapp development tools like Hardhat and Truffle produce JSON artifacts
-          as a result of compiling KuCoin smart contracts.
+          as a result of smart contract compilation.
         </p>
         <br />
         <TextField
@@ -49,12 +49,12 @@ const ByAbi = ({ closeModal }) => {
         <br />
         <Fieldset label="Name (required):">
           <p>
-            This can be anything you want and can be changed later. We will
-            infer this from your JSON artifact but you are welcome to change it.
+            This is an arbitrary name for the contract that can be changed later. 
+            If left blank, We will generate a name from your JSON artifact.
           </p>
           <br />
           <TextField
-            placeholder="MyDapp"
+            placeholder="Rug.SOL"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -75,7 +75,7 @@ const ByAbi = ({ closeModal }) => {
             onClick={addContract}
             disabled={!isArtifactValid || name.trim() === ""}
           >
-            Add Contract by Artifact
+            Add Contract via artifacts.json
           </Button>
         </ButtonContainer>
       </TabBody>

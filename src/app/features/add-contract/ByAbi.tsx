@@ -38,7 +38,7 @@ const ByAbi = ({ closeModal }) => {
       <TabBody>
         <p>
           The Application Binary Interface (ABI) is an array of objects that
-          specify how to interact with KuCoin smart contracts.
+          specifies how to interact with the contract.
         </p>
         <br />
         <TextField
@@ -52,12 +52,12 @@ const ByAbi = ({ closeModal }) => {
         <br />
         <Fieldset label="Name (required):">
           <p>
-            This can be anything you want and can be changed later. A random
-            name is generated for your convenience.
+            This is an arbitrary name for the contract that can be changed later. 
+            If left blank, We will generate a name for you.
           </p>
           <br />
           <TextField
-            placeholder="MyDapp"
+            placeholder="Rug.SOL"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -78,7 +78,7 @@ const ByAbi = ({ closeModal }) => {
             onClick={addContract}
             disabled={!isAbiValid || name.trim() === ""}
           >
-            Add Contract by ABI
+            Add Contract via ABI
           </Button>
         </ButtonContainer>
       </TabBody>
