@@ -43,7 +43,7 @@ const ClearButton = styled(Button)`
 const OutputLog = () => {
   const { logItems, clear } = OutputLogContainer.useContainer();
   return (
-    <Container label="Log">
+    <Container label="Console:">
       <Content className="output-log">
         {logItems.map((logItem, i) => {
           if (logItem.type === "normal") {

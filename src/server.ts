@@ -121,7 +121,7 @@ const startServer = async ({ port, paths = [], artifactPath }: IServer) => {
 
   server.listen(port, function () {
     log.success(
-      `Your dashboard is ready at: ${chalk.yellow(`http://localhost:${port}`)}`,
+      `Contract interface is ready at: ${chalk.yellow(`http://localhost:${port}`)}`,
     );
   });
 };

@@ -95,7 +95,7 @@ const useCallFunction = (args, types, fn, opts) => {
       }
 
       if (!(signer instanceof JsonRpcSigner)) {
-        throw new Error(`Cannot sign transactions with this wallet type`)
+        throw new Error(`Error while signing transaction!`)
       }
 
       let populatedResponse;

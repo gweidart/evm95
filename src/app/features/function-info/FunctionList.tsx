@@ -36,7 +36,7 @@ const Header = styled.div``;
 const FunctionList = ({ fns, selectedIdx, setSelectedIdx }) => {
   return (
     <Container>
-      <Header>Functions (arity):</Header>
+      <Header>Arity:</Header>
       <FunctionsCutout shadow={false}>
         <Content>
           {fns.map((fn, i) => (

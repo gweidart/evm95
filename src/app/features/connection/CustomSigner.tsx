@@ -8,12 +8,12 @@ const CustomSigner = () => {
   const { attemptSetCustomSigner } = Signers.useContainer();
 
   return (
-    <Fieldset label="Custom Signer (optional)" style={{ marginBottom: "12px" }}>
+    <Fieldset label="Custom Signatory (Optional)" style={{ marginBottom: "12px" }}>
       <p>Private Key / Mnemonic:</p>
       <Input
         style={{ fontSize: `12px` }}
         value={text}
-        placeholder="turkey snow danger yearly kale..."
+        placeholder="*Import private key OR mnemonic*"
         onChange={(e) => setText(e.target.value)}
       />
       <Button

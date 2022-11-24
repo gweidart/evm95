@@ -37,12 +37,12 @@ const ByAbi = ({ closeModal }) => {
     <>
       <TabBody>
         <p>
-          The Application Binary Interface (ABI) is an array of objects that
-          specifies how to interact with the contract.
+          The Application Binary Interface (ABI) can be copied from
+          a Solidity compiler (ie. Hardhat, Truffle, Remix), OR a network explorer.
         </p>
         <br />
         <TextField
-          placeholder="Paste ABI here..."
+          placeholder="*Insert raw ABI here*"
           onChange={(e) => {
             setRawAbi(e.target.value);
           }}
@@ -52,8 +52,8 @@ const ByAbi = ({ closeModal }) => {
         <br />
         <Fieldset label="Name (required):">
           <p>
-            This is an arbitrary name for the contract that can be changed later. 
-            If left blank, We will generate a name for you.
+            This is arbitrary and can be changed anytime. If left blank, the 
+            contract name will be automatically generated.
           </p>
           <br />
           <TextField

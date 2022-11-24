@@ -22,7 +22,7 @@ const ByCustomNode = () => {
         </Button>
       ) : (
         <>
-          <p style={{ marginTop: "12px" }}>Node URL:</p>
+          <p style={{ marginTop: "12px" }}>Node RPC:</p>
           <Input
             value={nodeUrl}
             onChange={(e) => setNodeUrl(e.target.value)}

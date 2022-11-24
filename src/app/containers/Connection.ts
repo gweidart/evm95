@@ -53,7 +53,7 @@ export function useConnection() {
       testAndSetProvider(provider);
     } catch (error) {
       console.error(error);
-      alert("Cannot connect to MetaMask, are you sure it is connected?");
+      alert("Cannot connect to MetaMask. Check installation?");
     }
   };
 

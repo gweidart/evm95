@@ -16,7 +16,7 @@ const ConnectOptions = () => {
   return (
     <>
       <Fieldset
-        label="Connection"
+        label="Account:"
         style={{ marginBottom: "12px", minWidth: "auto" }}
       >
         <Select

@@ -43,7 +43,7 @@ const ConnectStatus = () => {
         </DataPoint>
       </DataRow>
       <DataRow>
-        <DataLabel>Signer:</DataLabel>
+        <DataLabel>Signatory:</DataLabel>
         <DataPoint color={signer ? "green" : "red"} className="status-signer">
           {signer ? " Connected" : " Not Connected"}
         </DataPoint>
@@ -55,7 +55,7 @@ const ConnectStatus = () => {
         </DataPoint>
       </DataRow>
       <DataRow>
-        <DataLabel>Address:</DataLabel>
+        <DataLabel>Wallet:</DataLabel>
         <DataPoint title={address}>{address}</DataPoint>
       </DataRow>
 
@@ -65,7 +65,7 @@ const ConnectStatus = () => {
           fullWidth
           onClick={() => setCustomSigner(null)}
         >
-          Reset Custom Signer
+          Reset Signatory
         </Button>
       )}
     </div>

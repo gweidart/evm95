@@ -49,14 +49,14 @@ const Name = styled.span`
 const FunctionInfo = ({ fn }) => {
   if (!fn) {
     return (
-      <Container label="Function info">
-        <div>Please select a function.</div>
+      <Container label="Function Info:">
+        <div>*</div>
       </Container>
     );
   }
   console.log(fn.outputs);
   return (
-    <Container label="Function info">
+    <Container label="Function Info:">
       <Content>
         <DataItem>
           <b>Name:</b>{" "}

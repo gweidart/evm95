@@ -40,14 +40,14 @@ const ByEtherscan = ({ closeModal }) => {
       <TabBody>
         <div style={{ height: "452px" }}>
           <p>
-            Select the network and paste in the address to grab any publicly
-            available ABIs from Etherscan.
+            Select a network and import the contract address below. 
+            The ABI will be retrieved automagically.
           </p>
 
           <br />
 
           <Fieldset
-            label="Network"
+            label="Network:"
             style={{ marginBottom: "12px", minWidth: "auto" }}
           >
             <Select
@@ -63,13 +63,13 @@ const ByEtherscan = ({ closeModal }) => {
           <br />
 
           <Fieldset
-            label="Address"
+            label="Address:"
             style={{ marginBottom: "12px", minWidth: "auto" }}
           >
-            <p>The address of the verified address on etherscan.</p>
+            <p>Note:The contract source code must be verified.</p>
             <br />
             <Input
-              placeholder="0x6b175474e89094c44da98b954eedeac495271d0f"
+              placeholder="*Import contract address*"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
@@ -79,13 +79,12 @@ const ByEtherscan = ({ closeModal }) => {
 
           <Fieldset label="Name (required):">
             <p>
-              This can be anything you want and can be changed later. We will
-              automatically populate this from etherscan when you enter the
-              address if left empty.
+              This is arbitrary and can be changed later. If left blank, the 
+              contract name will be automatically generated.
             </p>
             <br />
             <Input
-              placeholder="MyDapp"
+              placeholder="Rug.sol"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -118,10 +117,10 @@ const ByEtherscan = ({ closeModal }) => {
             disabled={retrievingABI || !successRetrieveABI || name.length === 0}
           >
             {retrievingABI
-              ? "Retrieving ABI..."
+              ? "Fetching ABI..."
               : successRetrieveABI
-              ? "Add Contract via Etherscan"
-              : "Unable to retrieve via Etherscan"}
+              ? "Add Contract via explorer API"
+              : "Unable to retrieve ABI from explorer!"}
           </Button>
         </ButtonContainer>
       </TabBody>

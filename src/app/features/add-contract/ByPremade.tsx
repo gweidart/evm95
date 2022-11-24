@@ -24,7 +24,6 @@ const VendorCutout = styled(Cutout)`
   text-align: left;
   background: white;
   overflow: hidden;
-
   &:before {
     z-index: unset;
     width: 100%;
@@ -52,8 +51,18 @@ const ByPremade = ({ closeModal }) => {
           <ListsContainer>
             <VendorCutout>
               <Content>
-                <PremadeListItem idx={0} name="AlphaDAO" />
+                <PremadeListItem idx={0} name="Uniswap" />
                 <PremadeListItem idx={0} name="OpenZeppelin" />
+                <PremadeListItem idx={0} name="DappSys" />
+                <PremadeListItem idx={0} name="UMA" />
+                <PremadeListItem idx={0} name="Kyber" />
+                <PremadeListItem idx={0} name="MakerDAO" />
+                <PremadeListItem idx={0} name="Compound" />
+                <PremadeListItem idx={0} name="AAVE" />
+                <PremadeListItem idx={0} name="dYdX" />
+                <PremadeListItem idx={0} name="Curve Finance" />
+                <PremadeListItem idx={0} name="Synthetix" />
+                <PremadeListItem idx={0} name="OpenSea" />
               </Content>
             </VendorCutout>
             <VendorCutout>

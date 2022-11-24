@@ -35,10 +35,10 @@ const AddressInfo = () => {
     address,
   } = ContractAddress.useContainer();
   return (
-    <Container label="Contract Address">
-      <div>Custom:</div>
+    <Container label="Contract Address:">
+      <div>Target Contract:</div>
       <Input
-        placeholder="Paste the deployed contract address here."
+        placeholder="*Insert Smart Contract address here*"
         value={inputText}
         onChange={(e) => {
           setInputText(e.target.value);
@@ -48,7 +48,7 @@ const AddressInfo = () => {
 
       <div>
         <div style={{ marginTop: `1rem` }}>
-          From artifact @ network {network?.name}{" "}
+          Imported via artifacts: {network?.name}{" "}
           {network && `(${network?.chainId})`}:
         </div>
         <AddressPanel variant="well">
@@ -56,7 +56,7 @@ const AddressInfo = () => {
         </AddressPanel>
         <Divider style={{ marginTop: `1rem` }} />
         <div style={{ marginTop: `1rem` }}>
-          <strong>Selected contract address:</strong>
+          <strong>Selected Smart Contract:</strong>
         </div>
         <AddressPanel variant="well">
           {address || "Invalid address, function call will likely fail"}

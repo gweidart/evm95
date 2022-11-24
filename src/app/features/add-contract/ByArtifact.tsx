@@ -36,12 +36,12 @@ const ByAbi = ({ closeModal }) => {
     <>
       <TabBody>
         <p>
-          Dapp development tools like Hardhat and Truffle produce JSON artifacts
-          as a result of smart contract compilation.
+          Artifacts.json can be obtained via a Solidity compiler.
+          (ie. Hardhat, Truffle, Remix).
         </p>
         <br />
         <TextField
-          placeholder="Paste JSON artifact here..."
+          placeholder="*Insert raw artifacts.json here*"
           onChange={handleTextAreaChange}
           multiline
           style={{ height: `240px`, fontFamily: "monospace" }}
@@ -49,8 +49,8 @@ const ByAbi = ({ closeModal }) => {
         <br />
         <Fieldset label="Name (required):">
           <p>
-            This is an arbitrary name for the contract that can be changed later. 
-            If left blank, We will generate a name from your JSON artifact.
+            This is arbitrary and can be changed anytime. If left blank, the 
+            contract name will be automatically generated from the JSON artifact.
           </p>
           <br />
           <TextField

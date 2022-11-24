@@ -70,8 +70,8 @@ const FunctionForm = ({ fn }) => {
 
   if (!fn) {
     return (
-      <Container label="Call function">
-        <p>Please select a function.</p>
+      <Container label="Function Calls:">
+        <p>*No Function Selected*</p>
       </Container>
     );
   }
@@ -124,10 +124,10 @@ const FunctionForm = ({ fn }) => {
         ))}
         {fn.stateMutability === "payable" && (
           <>
-            <div>ETH to send:</div>
+            <div>Send txn:</div>
             <Input
               type="number"
-              placeholder="in units of Eth, not Wei"
+              placeholder="*Enter Amount*"
               value={ethToSend}
               onChange={(e) => setEthToSend(e.target.value)}
               style={{ marginBottom: `1rem` }}
@@ -140,7 +140,7 @@ const FunctionForm = ({ fn }) => {
             Submit (Sign)
           </Button>
           <Button onClick={handleSubmit2} className="function-submit-btn">
-            Submit (TX)
+            Submit (View)
           </Button>
           <Button onClick={handleSubmit3} className="function-submit-btn">
             Create Bytes
@@ -152,7 +152,7 @@ const FunctionForm = ({ fn }) => {
             opts={opts}
           />
           <GasLimitCheckbox
-            label="custom gas limit"
+            label="Custom Gas Limit"
             checked={showGasLimit}
             onChange={() => setShowGasLimit((p) => !p)}
           />
@@ -160,10 +160,10 @@ const FunctionForm = ({ fn }) => {
 
         {showGasLimit && (
           <>
-            <div style={{ marginTop: `1rem` }}>Gas limit:</div>
+            <div style={{ marginTop: `1rem` }}>Gas Limit:</div>
             <Input
               type="number"
-              placeholder="leave blank to use default"
+              placeholder="*21000 units*"
               value={gasLimit}
               onChange={(e) => setGasLimit(e.target.value)}
               style={{ marginBottom: `1rem` }}
